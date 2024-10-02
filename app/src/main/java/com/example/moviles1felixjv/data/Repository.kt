@@ -13,7 +13,9 @@ class Repository {
         videojuegos.add(Videojuego("HellDivers", "2"))
         videojuegos.add(Videojuego("Counter Strike", "Global Ofensive"))
     }
+
     fun addVideojuego(videojuego:Videojuego) = videojuegos.add(videojuego)
+
     fun getVideojuego(): List<Videojuego>{
         return videojuegos
     }

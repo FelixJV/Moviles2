@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="252dp"
-        android:layout_height="63dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="84dp"
         android:text="@string/videosjuegos"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonizq"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="14dp"
@@ -40,11 +40,13 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
-        android:layout_width="221dp"
-        android:layout_height="70dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
-        android:layout_marginEnd="97dp"
+
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/GuideLine2"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -55,11 +57,12 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout2"
-        android:layout_width="220dp"
-        android:layout_height="59dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
-        android:layout_marginEnd="98dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/GuideLine2"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -89,10 +92,11 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout3"
-        android:layout_width="241dp"
-        android:layout_height="105dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="23dp"
-        android:layout_marginEnd="85dp"
+        app:layout_constraintEnd_toStartOf="@id/GuideLine2"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ratingBar">
 
@@ -103,8 +107,8 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <RadioGroup
-        android:layout_width="178dp"
-        android:layout_height="107dp"
+        android:layout_width="174dp"
+        android:layout_height="104dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="117dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -119,9 +123,9 @@
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="63dp"
             android:text="@string/no_lo_recomiendo" />
-        </RadioGroup>
+    </RadioGroup>
 
     <TextView
         android:id="@+id/textView3"
@@ -134,12 +138,26 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/Submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="59dp"
-        android:layout_marginBottom="11dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/buttonSubmit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="85dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GuideLine2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="83dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

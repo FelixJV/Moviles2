@@ -21,4 +21,6 @@
     <string name="lo_recomendarias">Lo Recomendarías?</string>
     <string name="button">Button</string>
     <string name="buttonSubmit">ButtonSubmit\n</string>
+    <string name="videosjuegosLand">VIDEOSJUEGOS</string>
+    <string name="nameLand">Name</string>
 </resources>
