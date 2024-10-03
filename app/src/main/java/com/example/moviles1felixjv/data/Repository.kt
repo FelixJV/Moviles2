@@ -20,4 +20,7 @@ class Repository {
         return videojuegos
     }
 
+    fun deleteVideojuego(videojuego: Videojuego) = videojuegos.remove(videojuego)
+
+
 }

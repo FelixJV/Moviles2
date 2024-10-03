@@ -23,4 +23,6 @@
     <string name="buttonSubmit">ButtonSubmit\n</string>
     <string name="videosjuegosLand">VIDEOSJUEGOS</string>
     <string name="nameLand">Name</string>
+    <string name="anyadir">+</string>
+    <string name="eliminar">-</string>
 </resources>

@@ -15,6 +15,7 @@ import com.example.moviles1felixjv.data.Repository
 import com.example.moviles1felixjv.databinding.ActivityMainBinding
 import com.example.moviles1felixjv.domain.domain.modelo.Videojuego
 import com.example.moviles1felixjv.domain.domain.usecases.videojuegos.AddVideojuego
+import com.example.moviles1felixjv.domain.domain.usecases.videojuegos.DeleteVideojuego
 import com.example.moviles1felixjv.domain.domain.usecases.videojuegos.GetVideojuego
 import com.example.moviles1felixjv.util.StringProvider
 import com.google.android.material.textfield.TextInputLayout
@@ -29,7 +30,8 @@ class MainActivity : AppCompatActivity() {
         MainViewModelFactory(
             StringProvider.instance(this),
             AddVideojuego(Repository.getInstance()),
-            GetVideojuego(Repository.getInstance())
+            GetVideojuego(Repository.getInstance()),
+            DeleteVideojuego(Repository.getInstance())
         )
 
 
@@ -49,17 +51,36 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        viewModel.uiState.observe(this) { state ->
+
+            state.videojuego?.let { videojuego ->
+                binding.textInputLayout.editText?.setText(videojuego.nombre)
+            }
+            state.videojuego?.let { videojuego ->
+                binding.textInputLayout2.editText?.setText(videojuego.genero)
+            }
+        }
 
         val name: TextInputLayout = binding.textInputLayout
 
-        binding.Submit?.setOnClickListener{
+        binding.anyadir?.setOnClickListener{
             val nombreVideojuego = binding.textInputLayout.editText?.text.toString()
             val genero = binding.textInputLayout2.editText?.text.toString()
             val videojuego = Videojuego(nombreVideojuego,genero)
             viewModel.addVideojuego(videojuego)
         }
-        binding.buttonizq?.setOnClickListener{
-
+        binding.eliminar?.setOnClickListener{
+            val nombreVideojuego = binding.textInputLayout.editText?.text.toString()
+            val genero = binding.textInputLayout2.editText?.text.toString()
+            val videojuego = Videojuego(nombreVideojuego,genero)
+            viewModel.deleteVideojuego(videojuego)
         }
-    }
-}
+
+        binding.derecha?.setOnClickListener{
+            viewModel.verSiguiente()
+        }
+
+        binding.izquierda.setOnClickListener{
+            viewModel.verAnterior()
+        }
+}}
